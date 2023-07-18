@@ -4,13 +4,19 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.firstcomposeapp.ui.theme.FirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -52,21 +58,70 @@ fun SayName() {
 //        Image(painter = painterResource(id = R.drawable.alkadi), contentDescription = "hello")
 //
 //    }
-//    val state= remember{mutableStateOf("")}
-//    TextField(
-//        value = state.value,
-//        onValueChange = {
-//                        state.value=it
-//        },
-//        label = { Text(text = "name") },
-//        placeholder={}
-//    )
+//   Column(verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
+//       Text(text = "A")
+//       Text(text = "B")
+//   }
+//    Row(horizontalArrangement = Arrangement.SpaceAround, verticalAlignment = Alignment.CenterVertically) {
+//        Text(text = "A")
+//        Text(text = "B")
+//    }
+//    Box(contentAlignment = Alignment.BottomCenter){
+//        Image(painter = painterResource(id = R.drawable.alkadi), contentDescription = "meow")
+//        Text(text = "hello")
+//    }
 
 
 }
 
+//@Composable
+//private fun ListViewItem(imgId:Int,name:String,occupation:String,modifier: Modifier){
+//    Row(modifier.padding(8.dp)) {
+//
+//        Image(painter = painterResource(id = imgId), contentDescription = "meow",Modifier.size(40.dp))
+//
+//        Column() {
+//            Text(text = name, fontWeight = FontWeight.Bold)
+//            Text(text = occupation, fontWeight = FontWeight.Thin, fontSize = 12.sp)
+//        }
+//    }
+//}
+
+//@Composable
+//private fun textshow(){
+//    Text(text = "hello", color = Color.Red, modifier = Modifier
+//        .padding(8.dp)
+//        .background(Color.Blue)
+//        .size(40.dp)
+//        .border(2.dp, Color.Black)
+//        .clip(CircleShape)
+//        .background(Color.Yellow)
+//        .clickable {  }
+//
+//    )
+//}
+
 @Composable
-@Preview(showBackground = true, name = "okji", widthDp = 300, heightDp = 500)
+private fun CircularImage() {
+    Image(
+        painter = painterResource(id = R.drawable.alkadi),
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.size(40.dp).clip(CircleShape).border(2.dp, Color.Black, CircleShape).shadow(8.dp,
+            CircleShape),
+        contentDescription = "meow"
+    )
+}
+
+@Composable
+@Preview(showBackground = true, name = "okji")
 private fun PreviewFunc() {
-    SayName()
+//    SayName()
+//    Column() {
+//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+//    }
+//    textshow()
+    CircularImage()
 }
