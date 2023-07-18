@@ -3,15 +3,14 @@ package com.example.firstcomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.Image
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.firstcomposeapp.ui.theme.FirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,13 +25,48 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SayName(name:String){
-    Text(text = "hello $name")
+fun SayName() {
+
+//    Text(
+//        text = "hello $name",
+//        fontStyle = FontStyle.Italic,
+//        fontWeight = FontWeight.Bold,
+//        color = Color.Red,
+//        fontSize = 20.sp,
+//        textAlign = TextAlign.Center
+//    )
+//    Image(
+//        painter = painterResource(id = R.drawable.alkadi),
+//        contentDescription = "hello ji",
+//        colorFilter = ColorFilter.lighting(Color.Green, Color.Red),
+//        contentScale = ContentScale.Crop
+//    )
+//    Button(
+//        onClick = { /*TODO*/ },
+//        colors = ButtonDefaults.buttonColors(contentColor = Color.Red, containerColor = Color.Blue),
+//        shape = MaterialTheme.shapes.small
+//    ) {
+//        Text(text = "Hello")
+//        Image(painter = painterResource(id = R.drawable.alkadi), contentDescription = "hello")
+//
+//    }
+//    val state= remember{mutableStateOf("")}
+//    TextField(
+//        value = state.value,
+//        onValueChange = {
+//                        state.value=it
+//        },
+//        label = { Text(text = "name") },
+//        placeholder={}
+//    )
+
+
 }
 
 @Composable
-@Preview(showBackground = true, name = "okji", widthDp = 100, heightDp = 200)
-private fun PreviewFunc(){
-    SayName(name = "Ankit")
+@Preview(showBackground = true, name = "okji", widthDp = 300, heightDp = 500)
+private fun PreviewFunc() {
+    SayName()
 }
