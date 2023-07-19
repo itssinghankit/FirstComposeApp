@@ -23,10 +23,12 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            FirstComposeAppTheme {
-                // A surface container using the 'background' color from the theme
-//                Greeting("Android")
-            }
+            PreviewFunc()
+//            FirstComposeAppTheme {
+//
+//                // A surface container using the 'background' color from the theme
+////                Greeting("Android")
+//            }
         }
     }
 }
@@ -101,27 +103,27 @@ fun SayName() {
 //    )
 //}
 
-@Composable
-private fun CircularImage() {
-    Image(
-        painter = painterResource(id = R.drawable.alkadi),
-        contentScale = ContentScale.Crop,
-        modifier = Modifier.size(40.dp).clip(CircleShape).border(2.dp, Color.Black, CircleShape).shadow(8.dp,
-            CircleShape),
-        contentDescription = "meow"
-    )
-}
+//@Composable
+//private fun CircularImage() {
+//    Image(
+//        painter = painterResource(id = R.drawable.alkadi),
+//        contentScale = ContentScale.Crop,
+//        modifier = Modifier.size(40.dp).clip(CircleShape).border(2.dp, Color.Black, CircleShape).shadow(8.dp,
+//            CircleShape),
+//        contentDescription = "meow"
+//    )
+//}
 
-@Composable
-@Preview(showBackground = true, name = "okji")
-private fun PreviewFunc() {
-//    SayName()
-//    Column() {
-//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
-//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
-//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
-//        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
-//    }
-//    textshow()
-    CircularImage()
-}
+//@Composable
+//@Preview(showBackground = true, name = "okji")
+//private fun PreviewFunc() {
+////    SayName()
+////    Column() {
+////        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+////        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+////        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+////        ListViewItem(imgId = R.drawable.alkadi, name = "Ankit singh", occupation = "Software Engineer",Modifier)
+////    }
+////    textshow()
+//    CircularImage()
+//}
